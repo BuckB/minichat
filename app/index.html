@@ -1,21 +1,32 @@
 <!doctype html>
 <html>
 
-<head>
-  <title>mini-chat</title>
-</head>
+  <head>
+    <title>mini-chat</title>
+  </head>
 
-<body ng-app="myApp">
-  <div ng-controller="MainController">
-    <input type="text" ng-model="message">
-    <button ng-click="send()">Send</button>
-    <hr>
-    <h1>{{lastMessage}}</h1>
-  </div>
-  <script src="js/angular.js"></script>
-  <script src="//localhost:3696/socket.io/socket.io.js"></script>
-  <script src="js/io.js"></script>
-  <script src="js/app.js"></script>
-</body>
+  <body ng-app="myApp">
+    <div class="container col-md-6 mt-4" ng-controller="MainController">
+      <form class="form-group" novalidate name="chatForm">
+        <div class="input-group">
+          <input class="form-control" type="text" ng-model="text.message" placeholder="Message" required>
+          <button class="btn" ng-class="{'btn-success': text.message, 'btn-outline-secondary': !text.message }" ng-click="send()" ng-disabled="!text.message">Send</button>
+        </div>
+      </form>
+      <hr>
+      <div class="bg-outline-primary clearfix" ng-repeat="chat in msglog">
+        <p class="float-left text-justify font-weight-bold col-md-7">{{chat.message}}</p>
+        <p class="float-right">::sent {{chat.timestamp}}</p>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+    <script src="js/angular.js"></script>
+    <script src="//localhost:3696/socket.io/socket.io.js"></script>
+    <script src="js/io.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </body>
 
 </html>
