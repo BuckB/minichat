@@ -5,6 +5,7 @@ var path = require('path');
 var port = 8012;
 
 app.use('/js', express.static(__dirname + '/js'));
+app.use('/view', express.static(__dirname + '/view'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
