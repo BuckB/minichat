@@ -55,15 +55,6 @@ angular.module('myApp', ['io.service', 'ngRoute']).
       .when('/chat/:chatname/:username', {
         templateUrl: '/view/chat.html',
         controller: 'MainController'
-/*         resolve: {
-          chatName: function(chatname){
-              $scope.chatName = chatname || 'miniChat Room';
-              return $scope.chatName;
-          },
-          userName: function(username){
-              return username;
-          }
-        } */
       });
     $locationProvider.html5Mode(true);
   });
