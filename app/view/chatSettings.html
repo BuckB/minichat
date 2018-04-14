@@ -1,0 +1,18 @@
+<div class="container col-md-6 mt-5 text-center">
+    <hr>
+    <form class="form-signin" novalidate name="settingsForm">
+        <h1 class="h3 mb-3 font-weight-normal">Welcome to MiniChat</h1>
+        <div class="container col-md-6 mt-4 mb-2">
+            <label for="username" class="sr-only">Username</label>
+            <input class="form-control" type="text" ng-model="username" placeholder="Username" required>
+        </div>
+        <div class="container col-md-6 mb-3">
+            <label for="chat-room name" class="sr-only">Chat-room name</label>
+            <input class="form-control" type="text" ng-model="chatname" placeholder="Chat-room name">
+        </div>
+        <div class="container col-md-6">
+            <button class="btn btn-lg btn-block" ng-class="{'btn-success': username, 'btn-outline-secondary': !username }" ng-click="go(username)"
+                ng-disabled="!username">Start Chat</button>
+        </div>
+    </form>
+</div>
