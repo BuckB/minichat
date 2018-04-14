@@ -1,5 +1,10 @@
-<div class="container col-md-6 mt-4"> <!-- ng-controller="MainController"> -->
-    <p ng-if="chatroomName">{{chatroomName}}</p>
+<div class="container col-md-6 mt-4">
+    <div class="row">
+        <div class="col-md-9"><h3 ng-if="chatroomName">{{chatroomName}}</h3></div>
+        <div class="col-md-3">
+            <button class="btn btn-outline-danger float-right" ng-click="goHome()"><span>Exit &nbsp;</span><i class="fa fa-home"></i></button>
+        </div>
+    </div>
     <hr>
     <div class="jumbotron" style="background-color: #f8f9fa !important; min-height: 575px;">
         <div class="bg-outline-primary clearfix" ng-repeat="chat in msglog">
@@ -11,7 +16,7 @@
     <form class="form-group" novalidate name="chatForm">
         <div class="input-group">
             <input class="form-control" type="text" ng-model="text.message" placeholder="Message" required>
-            <button class="btn" ng-class="{'btn-success': text.message, 'btn-outline-secondary': !text.message }" ng-click="send()" ng-disabled="!text.message">Send</button>
+            <button class="btn" type="submit" ng-class="{'btn-success': text.message, 'btn-outline-secondary': !text.message }" ng-click="send()" ng-disabled="!text.message">Send</button>
         </div>
     </form>
 </div>

@@ -41,6 +41,10 @@ angular.module('myApp', ['io.service', 'ngRoute']).
       delete $scope.text;
     }
 
+    $scope.goHome = function goHome() {
+      return $scope.$location.path('/');
+    }
+
     io.watch('message', function (data) {
       $scope.$apply();
     });
