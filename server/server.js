@@ -15,7 +15,7 @@ io.on('connection', function (socket) {
   socket.events = {};
 
   socket.on('event.message', function (payload) {
-    socket.emit('event.response', payload);
+    socket.broadcast.emit('event.response', payload);
   });
 
   socket.on('event.subscribe', function (room) {
